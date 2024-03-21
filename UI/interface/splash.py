@@ -6,7 +6,6 @@ from tkinter import *
 
 from UI.dashboard import main_screen
 
-
 w=Tk()
 
 
@@ -53,13 +52,6 @@ def bar():
     
 progress.place(x=-10,y=235)
 
-
-
-
-#############
-# frame 333333333333333333333333
-#
-###########
 
 a='#B60000'
 Frame(w,width=427,height=241,bg=a).place(x=0,y=0)  #249794

@@ -1,12 +1,11 @@
 from Model.list_matier import ListUe
 import random
 
-
 # import
 # from liste_matier import list_ues
 from liste_jour import jours
 from liste_matier import enregistrement
-
+  
 if __name__=="__main__" :
     
     emploi_temps_semain= []   
@@ -21,7 +20,7 @@ if __name__=="__main__" :
     print(list_ues.print_list_eu())
     print("================================")
     # Semaine
-    for i in  range(0, 1):
+    for i in  range(0, 24):
         for jour in  jours:
             martierjournee = []
             for i in range(0, 3):
