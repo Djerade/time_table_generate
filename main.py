@@ -1,4 +1,4 @@
-from Model.list_matier import ListtUe
+from Model.list_matier import ListUe
 import random
 
 
@@ -11,9 +11,15 @@ if __name__=="__main__" :
     
     emploi_temps_semain= []   
     emploi_temps_mois= [] 
-    list_ues = ListtUe()
+    list_ues = ListUe()
+    # enregistrement des matières 
     if list_ues.size_list() == 0:
         enregistrement(list_ues)
+        
+        
+    print("============== liste de ue==================")
+    print(list_ues.print_list_eu())
+    print("================================")
     # Semaine
     for i in  range(0, 1):
         for jour in  jours:
@@ -34,7 +40,8 @@ if __name__=="__main__" :
                                 print("on a trouvé")
                                 ue.update_time(ue_choose.heure)
                                 print('heure restant ', ue_choose.heure)
-                        
+                else:
+                    print('temps ecoulé ')       
                         
 
 

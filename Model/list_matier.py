@@ -1,4 +1,4 @@
-class ListtUe():
+class ListUe():
     def __init__(self) -> None:
       self.list = []
     
@@ -8,5 +8,8 @@ class ListtUe():
     def get_list(self):
       return self.list
     
+    def print_list_eu(self):
+      for ue in self.list:
+        print (ue)
     def size_list(self):
       return len(self.list)
