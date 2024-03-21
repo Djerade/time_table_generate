@@ -3,6 +3,7 @@ import customtkinter as ctk
 from tkinter import Tk
 from tkinter.ttk import Progressbar
 from tkinter import *
+import time
 
 from UI.dashboard import main_screen
 
@@ -37,7 +38,7 @@ def bar():
     l4.config(font=lst4)
     l4.place(x=18,y=210)
     
-    import time
+
     r=0
     for i in range(100):
         progress['value']=r
