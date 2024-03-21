@@ -4,6 +4,9 @@ from tkinter import Tk
 from tkinter.ttk import Progressbar
 from tkinter import *
 
+from UI.dashboard import main_screen
+
+
 w=Tk()
 
 
@@ -24,34 +27,9 @@ s.theme_use('clam')
 s.configure("red.Horizontal.TProgressbar", foreground='red', background='black')
 progress=Progressbar(w,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
 
-#############progressbar          33333333333333333333333333333
-def new_win():
-    app = ctk.CTk()
-    app.geometry("800x600")
-    app.title("My Dashboard")
-    # w.destroy()
-    header_frame = ctk.CTkFrame(master=app)
-    data_frame = ctk.CTkFrame(master=app)
-    # ... add more frames if needed
 
-    # Add elements to each frame
-    # (Replace with your specific content)
-    header_label = ctk.CTkLabel(master=header_frame, text="Welcome to your Dashboard!")
-    data_label = ctk.CTkLabel(master=data_frame, text="Data will be displayed here")
-    progress_bar = ctk.CTkProgressBar(master=data_frame)  # Example progress bar
-
-    # Arrange the frames in your desired layout
-    header_frame.grid(row=0, column=0, columnspan=2)
-    data_frame.grid(row=1, column=0, columnspan=2)
-
-    # Customize appearance (optional)
-    ctk.set_appearance_mode("light")  
-    
-    
-    
-    app.mainloop()
-
-
+def splash():
+    w.mainloop()
 
 def bar():
 
@@ -68,8 +46,9 @@ def bar():
         time.sleep(0.03)
         r=r+1
     
-    w.destroy()
-    new_win()
+    
+    w.after(2000, w.destroy() )
+    main_screen()
         
     
 progress.place(x=-10,y=235)
@@ -108,6 +87,6 @@ l3.place(x=50,y=110)
   
 
 
-w.mainloop()
+
 
 

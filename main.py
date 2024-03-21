@@ -8,11 +8,13 @@ from liste_jour import jours
 from liste_matier import enregistrement
 
 if __name__=="__main__" :
+    
     emploi_temps_semain= []   
     emploi_temps_mois= [] 
     list_ues = ListtUe()
     if list_ues.size_list() == 0:
         enregistrement(list_ues)
+    # Semaine
     for i in  range(0, 1):
         for jour in  jours:
             martierjournee = []
@@ -21,16 +23,19 @@ if __name__=="__main__" :
                 if(ue_choose.heure > 0):
                     martierjournee.append(ue_choose)
                     if (ue_choose.heure <= 3 ):  
-                        for ue in list_ues:
+                        for ue in list_ues.get_list():
                             if(ue_choose.titre == ue.titre):
-                                ue.titre = 0
+                                ue.update_time(ue_choose.heure)
+                                print('heure restant ', ue_choose.heure)
                                  
-                                
-                
-                    for ue in list_ues:
-                        if(ue_choose.titre == ue.titre):
-                            print("on a trouvé")
-                            ue.hour()
+                    else:
+                        for ue in list_ues.get_list():
+                            if(ue_choose.titre == ue.titre):
+                                print("on a trouvé")
+                                ue.update_time(ue_choose.heure)
+                                print('heure restant ', ue_choose.heure)
+                        
+                        
 
 
             emploi_temps_semain.append({

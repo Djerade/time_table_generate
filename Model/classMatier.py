@@ -4,7 +4,12 @@ class Matier:
         self.credit  = 0
         self.heure  = 0
         
-    def hour(self):
-        self.heure = self.heure - 3
-        
+    
+    def heur_restante(self):
+        return self.heure
+    def update_time(self, hr):
+        if (hr == 3):
+            self.heure -= 3
+        else:
+            self.heure -= hr
     
