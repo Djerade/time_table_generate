@@ -1,18 +1,23 @@
-from Model.list_matier import ListUe
+# Modules
+import customtkinter as ctk
+from tkinter import Tk
 import random
 
 # import
-# from liste_matier import list_ues
-from liste_jour import jours
-from liste_matier import enregistrement
+from Date.liste_jour import jours
+from Logic.liste_matier import enregistrement
+from Model.list_matier import ListUe
+
+# vaiables global
+from Variables.list import  list_ues
+
+
   
 if __name__=="__main__" :
-    
     emploi_temps_semain= []   
     emploi_temps_mois= [] 
-    list_ues = ListUe()
     # enregistrement des matières 
-    if list_ues.size_list() == 0:
+    if  list_ues.size_list() == 0:
         enregistrement(list_ues)
         
         

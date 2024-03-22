@@ -26,9 +26,12 @@
 #          },
 #          ]
 
+
+
+
+
+
 from Model.classMatier import Matier
-
-
 
 
 def enregistrement(list_ue):

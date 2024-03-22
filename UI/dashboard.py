@@ -1,18 +1,27 @@
 import customtkinter as ctk
 from tkinter import Tk
-# Create the main window
+
+
+listnbre = [1,2,3,4,5,6]
+
+a= ""
+
+
+
 
 def main_screen():
     app = ctk.CTk()
-    app.geometry("800x600")
+    app.geometry("900x600")
     app.title("--------------")
     # w.destroy()
     header_frame = ctk.CTkFrame(master=app)
     data_frame = ctk.CTkFrame(master=app)
-    header_label = ctk.CTkLabel(master=header_frame, text="Welcome to your Dashboard!")
+    header_label = ctk.CTkLabel(master=header_frame, text=a)
     header_label.pack()
-    data_label = ctk.CTkLabel(master=data_frame, text="Data will be displayed here")
-    data_label.pack()
+    for i in listnbre:
+        data_label = ctk.CTkLabel(master=data_frame, text=i)
+        data_label.pack()
+    
     progress_bar = ctk.CTkProgressBar(master=data_frame)  # Example progress bar
     progress_bar.pack()
     # Arrange the frames in your desired layout
@@ -21,5 +30,7 @@ def main_screen():
     # Customize appearance (optional)
     ctk.set_appearance_mode("light")  
     app.mainloop()
-
-
+    
+    
+    
+main_screen()

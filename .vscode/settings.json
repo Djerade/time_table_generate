@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./liste_"
+        "./liste_",
+        "./Var"
     ]
 }

@@ -1,24 +1,97 @@
-import time
-from customtkinter import CTk
-import tkinter
-import customtkinter 
+from tkinter import ttk
+from tkinter.ttk import Progressbar
+from tkinter import *
 
-# Create the splash screen window
-splash_screen = CTk()
-splash_screen.geometry("400x300")
-splash_screen.title("My App Splash Screen")
+w=Tk()
 
-# Add elements to the splash screen (labels, images, etc.)
-label = customtkinter.CTkLabel(splash_screen, text="Loading...")
-label.pack(pady=20)
 
-# Simulate some loading time
-time.sleep(2)  # Replace with your actual loading logic
+width_of_window = 427
+height_of_window = 250
+screen_width = w.winfo_screenwidth()
+screen_height = w.winfo_screenheight()
+x_coordinate = (screen_width/2)-(width_of_window/2)
+y_coordinate = (screen_height/2)-(height_of_window/2)
+w.geometry("%dx%d+%d+%d" %(width_of_window,height_of_window,x_coordinate,y_coordinate))
 
-# Destroy the splash screen after a delay
-splash_screen.after(2000, splash_screen.destroy)  # 2 seconds delay
 
-# Your main application window and code goes here
-# ... (replace with your main application logic)
+w.overrideredirect(1)
 
-splash_screen.mainloop()
+
+s = ttk.Style()
+s.theme_use('clam')
+s.configure("red.Horizontal.TProgressbar", foreground='red', background='black')
+progress=Progressbar(w,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
+
+#############progressbar          33333333333333333333333333333
+def new_win():
+  # w.destroy()
+    q=Tk()
+    q.title('Main window')
+    q.geometry('8007x600')
+    l1=Label(q,text='acceuille ',fg='grey',bg=None)
+    l=('Calibri (Body)',24,'bold')
+    l1.config(font=l)
+    l1.place(x=80,y=100)
+
+
+
+    q.mainloop()
+
+
+
+def bar():
+
+    l4=Label(w,text='Chargement...',fg='white',bg=a)
+    lst4=('Calibri (Body)',10)
+    l4.config(font=lst4)
+    l4.place(x=18,y=210)
+
+    import time
+    r=0
+    for i in range(100):
+        progress['value']=r
+        w.update_idletasks()
+        time.sleep(0.03)
+        r=r+1
+
+    w.destroy()
+    new_win()
+
+
+progress.place(x=-10,y=235)
+
+
+
+
+#############
+# frame 333333333333333333333333
+#
+###########
+
+a='#B60000'
+Frame(w,width=427,height=241,bg=a).place(x=0,y=0)  #249794
+b1=Button(w,width=10,height=1,text='Get Started',command=bar,border=0,fg=a,bg='white')
+b1.place(x=170,y=200)
+
+
+######## Label
+
+l1=Label(w,text='Génération',fg='white',bg=a)
+lst1=('Calibri (Body)',14,'bold')
+l1.config(font=lst1)
+l1.place(x=50,y=80)
+
+l2=Label(w,text='automatique',fg='white',bg=a)
+lst2=('Calibri (Body)',14)
+l2.config(font=lst2)
+l2.place(x=155,y=82)
+
+l3=Label(w,text='DE PROGRAMME',fg='white',bg=a)
+lst3=('Calibri (Body)',10)
+l3.config(font=lst3)
+l3.place(x=50,y=110)
+
+
+
+
+w.mainloop()
