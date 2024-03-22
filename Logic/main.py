@@ -7,10 +7,8 @@ from Date.liste_jour import jours
 # vaiables global
 from Variables.list import  *
 
-
 def main():
-    
-     for i in  range(0, 24):
+     for i in  range(0, 11):
         for jour in  jours:
             martierjournee = []
             for i in range(0, 3):
