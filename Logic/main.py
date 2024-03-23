@@ -2,15 +2,27 @@
 import random
 
 # import
-from Date.liste_jour import jours
+from Data.liste_jour import jours
 
 # vaiables global
 from Variables.list import  *
-
-
+from Variables.compteur import  *
+def estimation_duree():
+    heure_par_semaine = 54
+    heure_total=0
+    for ue in list_ues.get_list():
+        heure_total += ue.heure
+    nbre_semaine = heure_total/heure_par_semaine
+    if isinstance(nbre_semaine, float):
+        return round(nbre_semaine) + 1
+    else:
+        return nbre_semaine
+        
 def main():
-    
-     for i in  range(0, 24):
+     print("semain estimer")
+     print(estimation_duree())
+     estimation_duree()
+     for i in  range(0, estimation_duree()):
         for jour in  jours:
             martierjournee = []
             for i in range(0, 3):
@@ -31,13 +43,11 @@ def main():
                                 print('heure restant ', ue_choose.heure)
                 else:
                     print('temps ecoulé ')       
-                        
-
-
             emploi_temps_semain.append({
                 "nom_jour": jour,
                 "ue_jour": martierjournee
             })
+            
             # print({
             #     "nom_jour": jour,
             #     "ue_jour": martierjournee
@@ -45,18 +55,18 @@ def main():
             
         emploi_temps_mois.append(emploi_temps_semain)
     
-    
-    
+
      for x in  emploi_temps_semain:
         print("---" + x['nom_jour']+ "---")
         for ue in x['ue_jour']:
             print("-", ue.titre ," ", ue.heure )
+            
+            
+
 
             
             
-    # for emploi in  emploi_temps_mois:
-    #     print(emploi)
-            
+
     
         
         
