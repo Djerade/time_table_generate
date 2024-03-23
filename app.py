@@ -15,7 +15,7 @@ if __name__=="__main__" :
         
     print("============== liste de ue==================")
     print(list_ues.print_list_eu())
-    print("taille")
+    print("nombre des matières")
     print(list_ues.size_list())
     print("================================")
     main()

@@ -7,6 +7,8 @@ from Data.liste_jour import jours
 # vaiables global
 from Variables.list import  *
 from Variables.compteur import  *
+
+# Cette fonction fonction retourne le nombre max de semaine
 def estimation_duree():
     heure_par_semaine = 54
     heure_total=0
@@ -17,11 +19,11 @@ def estimation_duree():
         return round(nbre_semaine) + 1
     else:
         return nbre_semaine
-        
+
+   
 def main():
-     print("semain estimer")
+     print("semaine estimer")
      print(estimation_duree())
-     estimation_duree()
      for i in  range(0, estimation_duree()):
         for jour in  jours:
             martierjournee = []
@@ -33,7 +35,7 @@ def main():
                         for ue in list_ues.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
-                                print('heure restant ', ue_choose.heure)
+                              
                                  
                     else:
                         for ue in list_ues.get_list():
