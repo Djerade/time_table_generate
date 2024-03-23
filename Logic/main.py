@@ -22,7 +22,7 @@ def estimation_duree():
 
    
 def main():
-     print("semaine estimer")
+     print("semaine estimée")
      print(estimation_duree())
      for i in  range(0, estimation_duree()):
         for jour in  jours:
@@ -35,14 +35,12 @@ def main():
                         for ue in list_ues.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
-                              
                                  
                     else:
                         for ue in list_ues.get_list():
                             if(ue_choose.titre == ue.titre):
-                                print("on a trouvé")
                                 ue.update_time(ue_choose.heure)
-                                print('heure restant ', ue_choose.heure)
+                                # print('heure restant ', ue_choose.heure)
                 else:
                     print('temps ecoulé ')       
             emploi_temps_semain.append({
@@ -50,12 +48,9 @@ def main():
                 "ue_jour": martierjournee
             })
             
-            # print({
-            #     "nom_jour": jour,
-            #     "ue_jour": martierjournee
-            # })
+       
             
-        emploi_temps_mois.append(emploi_temps_semain)
+        emploi_temps_global.append(emploi_temps_semain)
     
 
      for x in  emploi_temps_semain:
