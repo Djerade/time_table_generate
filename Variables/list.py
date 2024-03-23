@@ -1,5 +1,5 @@
 from Model.list_matier import ListUe
-# le varaible globale
+# varaibles globales
 list_ues = ListUe()
 emploi_temps_semain= []   
 emploi_temps_mois= [] 
