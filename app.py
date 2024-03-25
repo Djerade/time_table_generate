@@ -3,6 +3,7 @@ from Logic.main import main
 from Logic.input import enregistrement
 
 # vaiables global
+from UI.dashboard import main_screen
 from UI.print_screen import print_sreen
 from Variables.list import  *
 from Variables.compteur import *
@@ -20,5 +21,6 @@ if __name__=="__main__" :
     print(list_ues.size_list())
     print("================================")
     main()
-    print_sreen()
+    main_screen()
+    # print_sreen()
     print("================================")
