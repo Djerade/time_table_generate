@@ -26,22 +26,23 @@ def estimation_duree():
 def main():
      print("semaine estimée :", estimation_duree())
      numero_semaine = 0
+     list_ues_copy = list_ues
      for i in  range(0, estimation_duree()):
         for jour in  jours:
             # listes de matière prévues dans la journée
             martierjournee = []
             for i in range(0, 3):
-                ue_choose = random.choice(list_ues.get_list())
+                ue_choose = random.choice(list_ues_copy.get_list())
                 if(ue_choose.heure > 0):
                     martierjournee.append(ue_choose)
                     # Verification de l'heure restant
                     if (ue_choose.heure <= 3 ):  
-                        for ue in list_ues.get_list():
+                        for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
                                  
                     else:
-                        for ue in list_ues.get_list():
+                        for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
                                 # print('heure restant ', ue_choose.heure)

@@ -13,25 +13,13 @@ import time
 from Data.liste_jour import jours
 from Variables.list import *
 
-    # for programme in emploi_temps_global:
-    #     for  objet in programme:
-    #         objet["nom_jour"]
-    #         print(objet["nom_jour"])
-    #         for ue in objet["ue_jour"]:
-    #             print(ue.titre)
-    #             rows.append(ue.titre)
-
-
-
 
 
 
 def print_sreen():
     table = Table(title="Programme")
     console = Console()
-    ligne1= []
-    ligne2= []
-    ligne3= []
+    rows = []
     columns = []
     for programme in emploi_temps_global:
         rows = []
