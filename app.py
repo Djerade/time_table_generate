@@ -14,10 +14,12 @@ if __name__=="__main__" :
     if  list_ues.size_list() == 0:
         enregistrement(list_ues)
     print(list_ues)
-    print("============== liste deS ue ==================")
+ 
+    print("============== liste des ue ==================")
     print(list_ues.print_list_eu())
     print("nombre des Ue")
     print(list_ues.size_list())
     print("================================")
     main()
+    # print_sreen()
     print("================================")

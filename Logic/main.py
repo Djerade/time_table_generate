@@ -10,7 +10,7 @@ from Variables.compteur import  *
 
 # Cette fonction retourne le nombre max de semaine
 def estimation_duree():
-    # Nombre d'heur par semaine
+    # Nombre d'heure par semaine
     heure_par_semaine = 54
     # Somme de toutes les heure de toutes les matiere enregistrées
     heure_total=0
@@ -24,8 +24,8 @@ def estimation_duree():
 
    
 def main():
-     print("semaine estimée")
-     print(estimation_duree())
+     print("semaine estimée :", estimation_duree())
+     numero_semaine = 0
      for i in  range(0, estimation_duree()):
         for jour in  jours:
             # listes de matière prévues dans la journée
@@ -53,19 +53,22 @@ def main():
             })
             
        
-        # Ajoute d'un nouveau programme de la semaine dans le programme global
-        emploi_temps_global.append(emploi_temps_semain)
+        # Ajout d'un nouveau programme de la semaine dans le programme global
+        emploi_temps_global.append({
+            "numero": numero_semaine + 1,
+            "semaine": emploi_temps_semain
+        })
     
 
             
             
-     numero_semaine = 1           
-     for semaine in emploi_temps_global:
-        for x in  emploi_temps_semain:
+
+     for programme_semaine in emploi_temps_global:
+        for x in programme_semaine["semaine"]:
             print("---" + x['nom_jour']+ "---")
             for ue in x['ue_jour']:
-                print("-", ue.titre ," ", ue.heure )
-        print("---------------------")
+                print("-", ue.titre ," ",)
+     print("---------------------")
      
             
             

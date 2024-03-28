@@ -9,9 +9,11 @@ class ListUe():
     # de toutes les matière enregistrées
     def get_list(self):
       return self.list
-    
+    # Afficher les ue de la liste
     def print_list_eu(self):
       for ue in self.list:
         print (ue)
+        
+    # Avoir la toi de la liste
     def size_list(self):
       return len(self.list)
